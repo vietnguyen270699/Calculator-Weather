@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="overlay1"></div>
+    <div class="overlay2"></div>
+
+    <div class="container">
+        <div class="calculaterBox" id="calculaterBox">
+            <form action="" class="calculator" name="calc">
+                <input type="text" readonly class="value" name="txt">
+                <span class="num clear" onclick=" calc.txt.value ='' ">c</span>
+                <span class="num" onclick=" document.calc.txt.value +='/' ">/</span>
+                <span class="num" onclick=" document.calc.txt.value +='*' ">*</span>
+                <span class="num" onclick=" document.calc.txt.value +='7' ">7</span>
+                <span class="num" onclick=" document.calc.txt.value +='8' ">8</span>
+                <span class="num" onclick=" document.calc.txt.value +='9' ">9</span>
+                <span class="num" onclick=" document.calc.txt.value +='-' ">-</span>
+                <span class="num" onclick=" document.calc.txt.value +='4' ">4</span>
+                <span class="num" onclick=" document.calc.txt.value +='5' ">5</span>
+                <span class="num" onclick=" document.calc.txt.value +='6' ">6</span>
+                <span class="num plus" onclick=" document.calc.txt.value +='+' ">+</span>
+                <span class="num" onclick=" document.calc.txt.value +='1' ">1</span>
+                <span class="num" onclick=" document.calc.txt.value +='2' ">2</span>
+                <span class="num" onclick=" document.calc.txt.value +='3' ">3</span>
+                <span class="num" onclick=" document.calc.txt.value +='0' ">0</span>
+                <span class="num" onclick=" document.calc.txt.value +='.' ">.</span>
+                <span class="num equal" onclick=" document.calc.txt.value =eval(calc.txt.value) ">=</span>
+            </form>
+
+        </div>
+
+        <div class="weather" id="weather">
+            <div class="weather-content">
+                <div class="search-bar">
+                    <i class="fas fa-search search-icon "></i>
+                    <input type="text" name="search-city" id="search-input" placeholder="tìm thành phố ...">
+                </div>
+                <div class="infor">
+                    <h2 class="city-name"></h2>
+                    <p class="weather-state"> --</p>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weather-icon">
+                    <p class="temperature">--</p>
+                </div>
+            </div>
+            <div class="weather-detail">
+                <div class="humidity">
+                    <div class="title">Độ ẩm</div>
+                    <div class="value"><span class="humidity-value">--</span> %</div>
+                </div>
+                <div class="wind">
+                    <div class="title">Gió</div>
+                    <div class="value"><span class="wind-speed">--</span> km/h</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu" id="menu">
+       <img src="img/calculator.png" id="menu-icon">
+    </div>
+    
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".container"), {
+            max: 10,
+            speed: 200,
+            glare: true,
+        });
+
+    </script>
+    <script type="text/javascript" src="js/weather.js"></script>
+</body>
+
+</html>
